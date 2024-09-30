@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos Kanban - FlowMap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="/src/css/index.css">
+    <link rel="stylesheet" href="/src/css/moblie/index.css">
+    <link rel="stylesheet" href="../css/Planos.css">
+
+</head>
+<body>
+    <header>
+        <nav class="home_bar" >
+            <ul>
+                <li id="logo" class="item_bar"><a href="../index.html">
+                        <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap ">
+                        <span>FlowMap</span>
+                    </a></li>
+             
+                <li class="item_bar"><a href="/src/screen/planos.html"> Assinaturas </a></li>
+                <li class="item_bar"><a href="/src/screen/sobreNos.html">Sobre nós </a></li>
+                
+                <div id="button-container">
+                    <li class="btn_bar"> <a href="/src/screen/login.html">
+                            <button id="btn-login">Entrar</button>
+                        </a> </li>
+                    <li class="btn_bar"> <a href="/src/screen/signup.html">
+                            <button id="btn-signup">Comece gratuitamente</button>
+                        </a></li>
+                </div>
+                <button id="btn_menu" onclick="openMenu()">
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                </button>
+            </ul>
+        </nav>
+         <div id="menu_mobile" class="menu_mobile">
+            <nav>
+                
+                <a class="item_bar_mob" href="/src/screen/planos.html">Planos</a>
+                <a class="item_bar_mob" href="/src/screen/sobreNos.html">Sobre nós</a>
+                <a class="item_bar_mob" href="/src/screen/login.html">Entrar</a>
+                <a class="item_bar_mob" href="/src/screen/signup.html">Criar Conta</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="plans">
+            <div class="card personal">
+                <h2>Plano Básico Pessoal</h2>
+                <p class="price">R$ 30/mês</p>
+                <ul>
+                    <li>Máximo de 5 quadros</li>
+                    <li>Sem automação de tarefas</li>
+                    <li>Sem notificações</li>
+                    <li>Sem IA de suporte</li>
+                </ul>
+            </div>
+            <div class="card personal">
+                <h2>Plano Ultimate Pessoal</h2>
+                <p class="price">R$ 100/mês</p>
+                <ul>
+                    <li>Quadros ilimitados</li>
+                    <li>Todo recurso do Básico</li>
+                    <li>Automação de tarefas</li>
+                    <li>Notificações</li>
+                    <li>IA de suporte</li>
+                </ul>
+            </div>
+            <div class="card business">
+                <h2>Plano Básico Empresarial</h2>
+                <p class="price">R$ 1000/mês</p>
+                <ul>
+                    <li>Acesso para até 1000 contas</li>
+                    <li>Máximo de 5 quadros</li>
+                    <li>Sem automação de tarefas</li>
+                    <li>Sem notificações</li>
+                    <li>Sem IA de suporte</li>
+                </ul>
+            </div>
+            <div class="card business">
+                <h2>Plano Ultimate Empresarial</h2>
+                <p class="price">R$ 2000/mês</p>
+                <ul>
+                    <li>Acesso para até 1000 contas</li>
+                    <li>Quadros ilimitados</li>
+                    <li>Todo recurso do Básico</li>
+                    <li>Automação de tarefas</li>
+                    <li>Notificações</li>
+                    <li>IA de suporte</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 FlowMap. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

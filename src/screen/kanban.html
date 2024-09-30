@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/kanban.css">
+
+    <title>Meus Quadros| FlowMap</title>
+</head>
+
+<body>
+    <header class="header">
+
+            <ul>
+                <li id="logo" class="item_bar"><a href="../index.html">
+                        <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap ">
+                        <span>FlowMap</span>
+                    </a></li>
+            </ul>
+        
+        <select name="Quadros Recentes" id="listQuadros">
+            <option value="defualt"> Meus Quadros</option>
+            <option value="trabalho"> Trabalho</option>
+            <option value="Faculdade"> Facudade </option>
+            <option value="Tarefas">Tarefas de Casa</option>
+        </select>
+    </header>
+    <main>
+        <div class="container">
+            <div class="cols" id="Fazer" 
+            ondrop="dropHandler(event)"
+            ondragover="dragoverHandler(event)"
+            data-column="0" >
+                <div class="title">
+                    <span>A Fazer</span>
+                    <button class="btn-plus" onclick="openTaskCreate('Fazer')"> <img src="/imgs/plus.png"
+                            alt="Adicionar nova tarefa"></button>
+                </div>
+                <div class="cards-container">
+
+                </div>
+            </div>
+
+            <div class="cols" id="Progresso" 
+            ondrop="dropHandler(event)"
+            ondragover="dragoverHandler(event)" 
+            data-column="1">
+                <div class="title">
+                    <span>Em Progresso</span>
+                    <button class="btn-plus" onclick="openTaskCreate('Progresso')"> <img src="/imgs/plus.png"
+                            alt="Adicionar nova tarefa"></button>
+
+                </div>
+                <div class="cards-container">
+
+                </div>
+
+            </div>
+
+            <div class="cols" id="Finalizado" 
+            ondrop="dropHandler(event)"
+            ondragover="dragoverHandler(event)"
+            data-column="2">
+                <div class="title">
+                    <span>Finalizado</span>
+                    <button class="btn-plus" onclick="openTaskCreate('Finalizado')"> <img src="/imgs/plus.png"
+                            alt="Adicionar nova tarefa"></button>
+
+                </div>
+                <div class="cards-container">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="task-container">
+            <div class="box">
+                <div class="head">
+                    <span id="task-config-title">Nova Tarefa</span>
+                    <button onclick="closeTaskConfig()">
+                        <img src="/imgs/close_24dp_E_FILL0_wght400_GRAD0_opsz24.svg">
+                    </button>
+
+                </div>
+                <div action="" class="from">
+                    <input type="hidden" id="idInput">
+                    <input type="hidden" id="columnName">
+
+                    <div class="config">
+                        <label for="title"> Nome </label>
+                        <textarea name="title" rows="1" id="title"></textarea>
+                    </div>
+                    <div class="config">
+                        <label for="description"> Descrição </label>
+                        <textarea name="description" rows="5" id="description"></textarea>
+                    </div>
+                    <div class="config">
+                        <label for="">Prioridade</label>
+                        <select name="" id="priority">
+                            <option value="Baixa"> Baixa </option>
+                            <option value="Media">Media</option>
+                            <option value="Alta"> Alta</option>
+                        </select>
+                        <div class="config">
+                            <label for=""> Data Limite</label>
+                            <input type="date" id="date">
+                        </div>
+
+                        <button class="btn-submit" id="btn-create" onclick="newTask()">Cadrastrar</button>
+                        <button class="btn-submit" id="btn-setting" onclick="updateTask()">Salvar Alterações</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/moment.js"></script>
+    <script src="../js/uuid.min.js"></script>y
+    <script src="../js/kanban.js"></script>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 OrganizeIt. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+
+
+</html>

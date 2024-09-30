@@ -1,0 +1,191 @@
+:root{
+    --primary-color: rgba(216, 40, 216, 0.527);
+    --text-color:#131126;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    outline:none;
+    font-family: "Roboto Condensed", sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F9E6E6 ;
+    color: var(--text-color);
+}
+li{
+    list-style-type: none;    
+}
+.header{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: white;
+}
+.header, .logo{
+    display: flex;
+}
+.logo{
+    width: 20%;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 100;
+}
+.logo img {
+    width: 15px;
+    right: 10px;
+    margin-right: 10px;
+}
+
+#listQuadros{  
+    border: none;
+    background:var(--primary-color);
+    padding: 12px 9px;
+    font-style: italic;
+    border-radius: 5px;
+    
+}
+.container{
+    display:  flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+
+}
+.cols{
+    width: 300px;
+    height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.container .cols .cards-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+
+
+
+}
+.container .cols .cards-container .cards{
+    background-color: lightgray;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    
+}
+.container .cols .cards-container .info{
+    font-size: 16px;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+
+
+}
+.container .cols .title{
+    background: var(--primary-color);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .cols .title .btn-plus{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.container .cols .title img{
+    width: 25px;
+    height: 25px;
+}
+
+#task-container{
+    position:fixed;
+    top: 0;bottom: 0;left: 0; right: 0;
+    background-color: rgba(0,0, 0, 0.527);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+#task-container .box{
+    background-color: #fff;
+    width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#task-container .box .head {
+    display: flex;
+    justify-content: space-between;
+    padding:  20px;
+    border-bottom: 1px solid black;
+    font-weight: 700px;
+
+}
+#task-container .box .head  span{
+    font-size: 20px;
+}
+
+
+#task-container .box .head button {
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor:pointer;
+}
+#task-container .box .from{
+    padding: 20px;
+
+}
+
+#task-container .box .from label{
+    display: block;
+    font-size:14px;
+    margin-bottom: 5px;
+}
+#task-container .box .from textarea ,
+#task-container .box .from select,
+#task-container .box .from input
+{
+    width: 100%;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #999; 
+    margin: 5px;
+}
+
+
+#task-container .box .from textarea{
+    padding: 10px 15px;
+}
+#task-container .box .from select{
+    padding: 10px;
+}
+#task-container .box .from input{
+    padding: 10px;
+}
+#task-container .box .from .btn-submit {
+    border: none;
+    background-color: var(--primary-color);
+    color:black;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    height: 50px;
+    margin-top: 15px;
+}
+
+
