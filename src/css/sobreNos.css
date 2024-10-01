@@ -1,9 +1,13 @@
-
+/* --- Projeto FlowMap Kanban ---
+PARTICIPANTES:
+Alexandre Vieira Gonçalves
+Guilbert Wilkerson Marques Oliveira  */
 
 main {
     padding: 20px;
 }
 
+/* Aplica um estilo comum nas seções */
 .about, .mission, .team {
     background: #ffffff;
     border: 1px solid #dddddd;
@@ -13,15 +17,23 @@ main {
     margin-bottom: 20px;
 }
 
-h2  ,h3{
-    color: #35424a;
-    margin-bottom: 1rem;
+/* Estilo para os textos */
+h2, h3 {
+    color: #272f34;
+    margin-bottom: 0.95rem;
 }
+
+h3{
+    color: #2d424f;
+    font-size: 1.1rem;
+}
+
 p{
     font-size: 1rem;
     line-height: 1.8; 
 
 }
+
 .team-member {
     margin: 10px 0;
     border-bottom: 1px solid #dddddd;

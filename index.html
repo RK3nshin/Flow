@@ -1,3 +1,9 @@
+<!-- Projeto FlowMap Kanban
+PARTICIPANTES:
+Alexandre Vieira Gonçalves
+Guilbert Wilkerson Marques Oliveira 
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,84 +11,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <link rel="icon" href="/imgs/LogoFlow.png" type="image/x-icon">
-    <link href="/src/css/index.css" rel="stylesheet">
-    <link href="./css/moblie/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/index.css">
     
-
     <title> FlowMap | Organize suas ideias, simplifique sua execução. </title>
 </head>
 
 <body>
+    <!-- Cabeçalho do Site -->
     <header>
-        <nav class="home_bar" >
+        <nav id="home_bar">
+            <!-- Menus e logo do Site -->
             <ul>
-                <li id="logo" class="item_bar"><a href="index.html">
+                <li id="logo">
+                    <a href="index.html">
                         <img id="logo_img" src="../imgs/LogoFlow.png" alt="Logo da FlowMap ">
-                        <span>FlowMap</span>
-                    </a></li>
-                <li class="item_bar"><a href="#presentation"> Ferramentas </a> </li>
-                <li class="item_bar"><a href="/src/screen/planos.html"> Assinaturas </a></li>
-                <li class="item_bar"><a href="/src/screen/sobreNos.html">Sobre nós </a></li>
-                
-                <div id="button-container">
-                    <li class="btn_bar"> <a href="./screen/login.html">
-                            <button id="btn-login">Entrar</button>
-                        </a> </li>
-                    <li class="btn_bar"> <a href="./screen/signup.html">
-                            <button id="btn-signup">Comece gratuitamente</button>
-                        </a></li>
-                </div>
-                <button id="btn_menu" onclick="openMenu()">
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                </button>
+                        FlowMap
+                    </a>
+                </li> 
+                <li class="item_bar"><a href="#home-main">Ferramentas</a> </li>
+                <li class="item_bar"><a href="./src/screen/planos.html">Assinaturas</a></li>
+                <li class="item_bar"><a href="./src/screen/sobreNos.html">Sobre nós</a></li>
             </ul>
-        </nav>
-         <div id="menu_mobile" class="menu_mobile">
+
+            <!-- Container dos botões de Entrar e Criar Conta -->
+            <div id="button-container">
+                <button id="btn-login"  class="btn_bar" onclick="window.location.href='./src/screen/login.html';">
+                    Entrar
+                </button>
+                <button id="btn-signup"  class="btn_bar" onclick="window.location.href='./src/screen/signup.html';">
+                    Criar Conta
+                </button>
+            </div>
+
+            <!-- Botão do menu para dispositivos com telas pequenas -->
+            <button id="btn_menu" onclick="openMenu()">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+        </nav>  
+
+        <!-- Menu do site para dispositivos com telas pequenas -->
+        <div id="menu_mobile" class="menu_mobile">
             <nav>
-                <a class="item_bar_mob" href="#presentation"> Ferramentas </a>
-                <a class="item_bar_mob" href="/src/screen/planos.html">Assinatura</a>
-                <a class="item_bar_mob" href="/src/screen/sobreNos.html">Sobre nós</a>
-                <a class="item_bar_mob" href="./login.html">Entrar</a>
-                <a class="item_bar_mob" href="./signup.html">Criar Conta</a>
+                <a class="item_bar_mob" href="./src/screen/planos.html">Assinaturas</a>
+                <a class="item_bar_mob" href="./src/screen/sobreNos.html">Sobre nós</a>
+                <a class="item_bar_mob" href="./src/screen/login.html">Entrar</a>
+                <a class="item_bar_mob" href="./src/screen/signup.html">Criar Conta</a>
             </nav>
         </div>
     </header>
+    
+    
     <main>
-        <section>
-            <div id="presentation">
-                <div id="presentation-container">
-                    <p id="title-presentation">FlowMap : Simplicidade e Organização</p>
-                    <br>
-                    <p id="description-presentation">
-                        Planeje, acompanhe e visualize suas tarefas de forma intuitiva e eficiente.
-                        Mantenha-se focado e produtivo com o FlowMap, onde suas ideias se transformam em ações.
-                    </p>
-                </div>
-
-                <div id="img-home">
-                    <img src="../imgs/home.jpeg" alt="Colaboração entre Pessoas">
-                </div>
-
+        <!-- Tela de apresentação -->
+        <div id="presentation">
+            <div id="presentation-container">
+                <p id="title-presentation">FlowMap : Simplicidade e Organização</p>
+                <p id="description-presentation">
+                    Planeje, acompanhe e visualize suas tarefas de forma intuitiva e eficiente.
+                    Mantenha-se focado e produtivo com o FlowMap, onde suas ideias se transformam em ações.
+                </p>
             </div>
-        </section>
+
+            <div id="img-home">
+                <img src="../imgs/home.jpeg" alt="Colaboração entre Pessoas">
+            </div>
+        </div>
+
+        <!-- Tela de informações do objetivo do site -->
         <section id="home-main">
             <h1 class="title-main">Organize suas tarefas e coordene processo e equipes de formas automatizada </h1>
             <p class="text-main"> <strong> Simples,flexível e poderoso.</strong> Com apenas quadros, listas e cartões,
-                obtenha uma
-                visualização clara de
-                quem está fazendo o que e o que precisa ser feito. Nossa ferramenta oferece uma maneira intuitiva de
-                gerenciar projetos e processos, garantindo que você e sua equipe estejam sempre no caminho certo.
+                obtenha uma visualização clara de quem está fazendo o que e o que precisa ser feito. Nossa ferramenta 
+                oferece uma maneira intuitiva de gerenciar projetos e processos, garantindo que você e sua equipe estejam 
+                sempre no caminho certo.
             </p>
             <img src="../imgs/todoPage.png"  alt="Tabelas to-do-list do FlowMap">
 
@@ -93,7 +102,8 @@
                 visão mais clara e objetiva das suas tarefas, contatos, arquivos e cards, facilitando a organização
                 e o acompanhamento de todas as atividades.
             </p>
-            <img src="../imgs/metodo-kanban.jpeg" alt="Estrutura do método kanban">
+            
+            <img src="../imgs/metodo-kanban.jpeg" alt="Estrutura do método kanban">    
 
             <h1 class="title-main">Automatize tarefas e notificações</h1>
             <p class="text-main">
@@ -104,14 +114,17 @@
             </p>
             <img src="../imgs/automatizacao.webp" alt="automatizando tarefas online">
         </section>
-        
     </main>
 
-    <script src="/src/js/menu.js"></script>
+    <!-- JS para o funcionamento do Menu Mobile -->
+    <script src="./src/js/menu.js"></script>
 
+    <!-- Rodapé do site -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2024 FlowMap. Todos os direitos reservados.</p>
+
+            <!-- Logo das redes sociais -->
             <div class="social-icons">
                 <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
                         class="fab fa-facebook-f"></i></a>
@@ -122,9 +135,7 @@
                         class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-
     </footer>
-
 </body>
 
 </html>

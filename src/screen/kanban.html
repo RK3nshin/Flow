@@ -1,3 +1,9 @@
+<!-- Projeto FlowMap Kanban
+PARTICIPANTES:
+Alexandre Vieira Gonçalves
+Guilbert Wilkerson Marques Oliveira 
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/kanban.css">
 
@@ -15,85 +21,90 @@
 </head>
 
 <body>
-    <header class="header">
-
+    <!-- Cabeçalho do Site -->
+    <header>
+        <nav id="home_bar">
+            <!-- Menus e logo do Site -->
             <ul>
-                <li id="logo" class="item_bar"><a href="/index.html">
+                <li id="logo" class="item_bar">
+                    <a href="/index.html">
                         <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap ">
                         <span>FlowMap</span>
-                    </a></li>
+                    </a>
+                </li>
             </ul>
-        
-        <select name="Quadros Recentes" id="listQuadros">
-            <option value="defualt"> Meus Quadros</option>
-            <option value="trabalho"> Trabalho</option>
-            <option value="Faculdade"> Facudade </option>
-            <option value="Tarefas">Tarefas de Casa</option>
-        </select>
+
+            <!-- Quadro de lista para escolher outros quadros -->
+            <select name="Quadros Recentes" id="listQuadros">
+                <option value="defualt"> Meus Quadros</option>
+                <option value="trabalho"> Trabalho</option>
+                <option value="Faculdade"> Facudade </option>
+                <option value="Tarefas">Tarefas de Casa</option>
+            </select>
+        </nav>
     </header>
+    
     <main>
         <div class="container">
-            <div class="cols" id="Fazer" 
-            ondrop="dropHandler(event)"
-            ondragover="dragoverHandler(event)"
-            data-column="0" >
+            <!-- Coluna "Fazer" para tarefas pendentes -->
+            <div class="cols" id="Fazer" ondrop="dropHandler(event)"
+            ondragover="dragoverHandler(event)" data-column="0" >
                 <div class="title">
                     <span>A Fazer</span>
+                    <!-- Botão para adicionar novas tarefas -->
                     <button class="btn-plus" onclick="openTaskCreate('Fazer')"> <img src="/imgs/plus.png"
                             alt="Adicionar nova tarefa"></button>
                 </div>
-                <div class="cards-container">
 
-                </div>
+                <!-- Container para exibir os cartões -->
+                <div class="cards-container"></div>
             </div>
 
-            <div class="cols" id="Progresso" 
-            ondrop="dropHandler(event)"
-            ondragover="dragoverHandler(event)" 
-            data-column="1">
+            <!-- Coluna "Progresso" para tarefas pendentes -->
+            <div class="cols" id="Progresso" ondrop="dropHandler(event)"
+            ondragover="dragoverHandler(event)" data-column="1">
                 <div class="title">
                     <span>Em Progresso</span>
+                    <!-- Botão para adicionar novas tarefas -->
                     <button class="btn-plus" onclick="openTaskCreate('Progresso')"> <img src="/imgs/plus.png"
                             alt="Adicionar nova tarefa"></button>
-
-                </div>
-                <div class="cards-container">
-
                 </div>
 
+                <!-- Container para exibir os cartões -->
+                <div class="cards-container"></div>
             </div>
 
-            <div class="cols" id="Finalizado" 
-            ondrop="dropHandler(event)"
-            ondragover="dragoverHandler(event)"
-            data-column="2">
+            <!-- Coluna "Finalizado" para tarefas pendentes -->
+            <div class="cols" id="Finalizado" ondrop="dropHandler(event)"
+            ondragover="dragoverHandler(event)" data-column="2">
                 <div class="title">
                     <span>Finalizado</span>
+                    <!-- Botão para adicionar novas tarefas -->
                     <button class="btn-plus" onclick="openTaskCreate('Finalizado')"> <img src="/imgs/plus.png"
                             alt="Adicionar nova tarefa"></button>
-
-                </div>
-                <div class="cards-container">
-
                 </div>
 
+                <!-- Container para exibir os cartões -->
+                <div class="cards-container"></div>
             </div>
-
         </div>
 
+        <!-- Container de tarefas -->
         <div id="task-container">
             <div class="box">
                 <div class="head">
                     <span id="task-config-title">Nova Tarefa</span>
                     <button onclick="closeTaskConfig()">
-                        <img src="/imgs/close_24dp_E_FILL0_wght400_GRAD0_opsz24.svg">
+                        <img src="/imgs/close_24dp_E_FILL0_wght400_GRAD0_opsz24.svg" alt="imagem de X">
                     </button>
 
                 </div>
-                <div action="" class="from">
+                <div class="from">
                     <input type="hidden" id="idInput">
                     <input type="hidden" id="columnName">
 
+                    <!-- Formulário para criar/editar tarefas
+                        (Nome; Descrição; Prioridade; Data Limite) -->
                     <div class="config">
                         <label for="title"> Nome </label>
                         <textarea name="title" rows="1" id="title"></textarea>
@@ -103,14 +114,14 @@
                         <textarea name="description" rows="5" id="description"></textarea>
                     </div>
                     <div class="config">
-                        <label for="">Prioridade</label>
-                        <select name="" id="priority">
+                        <label for="priority">Prioridade</label>
+                        <select name="priority" id="priority">
                             <option value="Baixa"> Baixa </option>
                             <option value="Media">Media</option>
                             <option value="Alta"> Alta</option>
                         </select>
                         <div class="config">
-                            <label for=""> Data Limite</label>
+                            <label for="date"> Data Limite</label>
                             <input type="date" id="date">
                         </div>
 
@@ -122,13 +133,18 @@
             </div>
         </div>
     </main>
+
+    <!-- JS e biliotecas para o funcionamento do kanban -->
     <script src="../js/moment.js"></script>
-    <script src="../js/uuid.min.js"></script>y
+    <script src="../js/uuid.min.js"></script>
     <script src="../js/kanban.js"></script>
 
+    <!-- Rodapé do site -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2024 OrganizeIt. Todos os direitos reservados.</p>
+
+            <!-- Logo das redes sociais -->
             <div class="social-icons">
                 <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
                         class="fab fa-facebook-f"></i></a>
@@ -139,11 +155,6 @@
                         class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-
     </footer>
-
 </body>
-
-
-
 </html>

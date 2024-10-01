@@ -1,3 +1,7 @@
+// --- Projeto FlowMap Kanban ---
+// PARTICIPANTES:
+// Alexandre Vieira Gonçalves
+// Guilbert Wilkerson Marques Oliveira
 
 const dicColumn = {
     0: 'Fazer',
@@ -11,7 +15,6 @@ const $nameTaskHeader = document.getElementById('task-config-title');
 const $createButton = document.getElementById('btn-create');
 const $settingsButton = document.getElementById('btn-setting');
 
-
 const $title = document.getElementById('title');
 const $description = document.getElementById('description');
 const $priority = document.getElementById('priority');
@@ -19,11 +22,11 @@ const $date = document.getElementById('date');
 const $idInput = document.getElementById('idInput');
 const $columnName = document.getElementById('columnName');
 
-
 const $cardFazerContainer = document.querySelector('#Fazer .cards-container');
 const $cardProgressoContainer = document.querySelector('#Progresso .cards-container');
 const $cardFinalizadoContainer = document.querySelector('#Finalizado .cards-container');
 
+// Inicializa uma lista de colunas
 let listColumn = [];
 Object.values(dicColumn).forEach(columnName => {
     listColumn[columnName] = [];
@@ -32,7 +35,7 @@ Object.values(dicColumn).forEach(columnName => {
 
 let cardColumnName = "";
 
-
+// Abre uma aba para criar uma nova tarefa
 function openTaskCreate(ColumnName) {
     $nameTaskHeader.innerHTML = "<span id='task-config-title'>Nova Tarefa</span>";
     $settingsButton.style.display = 'none';
@@ -41,6 +44,8 @@ function openTaskCreate(ColumnName) {
     cardColumnName = ColumnName; // Enquanto a configuração está aberta esse valor é igual ao nome da coluna
 
 }
+
+// Abre uma aba para ver/editar o conteúdo da tarefa
 function openTaskSettings(id, column) {
 
     $nameTaskHeader.innerHTML = "<span id='task-config-title'>Editar Tarefa</span>";
@@ -54,9 +59,9 @@ function openTaskSettings(id, column) {
     $priority.value = taskcurrent.priority;
     $idInput.value = taskcurrent.id;
     $columnName.value = taskcurrent.column;
-
-
 }
+
+// Atualiza os dados da tarefa
 function updateTask() {
     const task = {
         id: $idInput.value,
@@ -73,9 +78,9 @@ function updateTask() {
 
     closeTaskConfig();
     generateCards(task.column);
-
-
 }
+
+// Fecha a aba de criação/edição de tarefas
 function closeTaskConfig() {
     cardColumnName = "";
     $task.style.display = "none";
@@ -83,10 +88,10 @@ function closeTaskConfig() {
     $description.value = "";
     $priority.value = "Baixa";
     $date.value = "";
-
 }
-function generateHTMLCard(columnName) {
 
+// Gera o HTML para exibir as tarefas
+function generateHTMLCard(columnName) {
     const htmlCard = listColumn[columnName].map((task) => {
         const formattedDate = moment(task.deadline).format('DD/MM/YYYY');
         return `
@@ -110,9 +115,9 @@ function generateHTMLCard(columnName) {
     }).join("");
 
     return htmlCard;
-
 }
 
+// Gera os cartões de tarefas em uma determinada coluna
 function generateCards(columnName) {
     const htmlCard = generateHTMLCard(columnName);
     switch (columnName) {
@@ -128,7 +133,7 @@ function generateCards(columnName) {
     }
 }
 
-
+// Cria uma nova tarefa
 function newTask() {
         const task = {
             id: Math.floor(Math.random() * 1000000),
@@ -146,13 +151,9 @@ function newTask() {
     
     
         closeTaskConfig()
-    
-   
-
 }
 
-
-
+// Funções para arrastar as tarefas entre as colunas
 function dragstartHandler(ev) {
     ev.dataTransfer.setData("application/my-app", ev.target.id);
     ev.dataTransfer.effectAllowed = "move";
@@ -168,9 +169,6 @@ function dropHandler(ev) {
     const columnOrigem = data[1];
     const colunaDestino = ev.target.dataset.column;
     move(id, columnOrigem, dicColumn[colunaDestino]);
-
-
-
 }
 
 function move(id, columnOrigem, colunaDestino) {

@@ -1,9 +1,9 @@
-//! moment.js
-//! version : 2.30.1
-//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
-//! license : MIT
-//! momentjs.com
+// --- Projeto FlowMap Kanban ---
+// PARTICIPANTES:
+// Alexandre Vieira Gonçalves
+// Guilbert Wilkerson Marques Oliveira
 
+// Biblioteca para manipulação e formatação de datas e horários.
 ;(function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :

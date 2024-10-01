@@ -1,86 +1,46 @@
+/* --- Projeto FlowMap Kanban ---
+PARTICIPANTES:
+Alexandre Vieira Gonçalves
+Guilbert Wilkerson Marques Oliveira  */
 
-:root{
-    --btn-login-bg-color:#e67234;
-    --btn-login-bg-color-houver:#f55c09;
-    --placeholder-color:#746eb1;
-    --login-bg-color:rgba(221, 179, 240, 0.5);
-    --text-color: black
-
+/* Estilos globais */
+body {
+    background: #F9E6E6;
+    font-family: sans-serif;
 }
 
-
-.main-login ,.right-login,.left-login,.login-container{
-    height:100%;
+/* Layout principal */
+.main-login {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 760px;
     padding: 20px;
-}
-.right-login{
-    flex-direction: column;
-
+    width: 100vw;
 }
 
-.right-login > h1{
-    text-align: center;
-}
-.Img-login{
-    width: 25vw;
-}
-.left-login{ 
-    width: 50%;
-
-}
-.login-container-login{
-    width:70%;
-}
-.login-container-singup{
-    width:80%;
-}
-.login-container-login, .login-container-singup{
-    text-align: center;
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    background-color:var(--login-bg-color);
-    border-radius: 1.5rem;
-    box-shadow: 0px 20px 50px #00000056;
-    height: auto;
-}
-.login-container-singup > h1{
-    font-weight: 900;
-    padding: 1em;
-}
-.login-container-login > h1{
-    font-weight: 900;
-    padding: 0.5em;
-}
-.text-container {
-    width: 100%;
+.right-login, .left-login {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items: flex-start;
-    margin-bottom: 1.4rem;
-    
-}
-
-.right-login{
-    width: 50%;
+    align-items: center;
+    text-align: center;
 }
 
 .right-login > h1 {
-    color: var(--text-color);
+    color: #131126;
     font-size: 2rem;
+    width: 100%;
 }
 
+/* Estilo da imagem de login */
 .Img-login {
     width: 35vw;
     max-width: 450px;
 }
 
+/* Container do formulário de login */
 .login-container {
-    width: 100%;
     display: flex;
     flex-direction: column;
     background-color: #ffc0cb;
@@ -93,20 +53,21 @@
 }
 
 .login-container > h1 {
-    color: var(--text-color);
+    color: #342f68;
     font-weight: 900;
     font-size: 1.8rem;
     margin-bottom: 15px;
-    white-space: nowrap;
+    width: 100%;
 }
 
+/* Formulário */
 .text-container {
     width: 100%;
     margin-bottom: 15px;
 }
 
 .text-container label {
-    color: var(--text-color);
+    color: #342f68;
     margin-bottom: 5px;
     display: block;
 }
@@ -116,30 +77,17 @@
     border-radius: 10px;
     box-shadow: 0 20px 50px #00000056;
     width: 100%;
-    height:2rem;
+    height: 40px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0px 20px 50px #00000056;
-    font-size: 12pt;
-    
-}
-.text-container > label{
-    margin-bottom: 1rem;
-}
-.text-container > input{
-    padding: 1rem;
-
-}
-.text-container > input::placeholder{
-    color: var(--placeholder-color);
-    font-weight: 500;
+    font-size: 1rem;
+    color: #131126;
+    padding: 0 10px;
 }
 
+/* Botão de login */
 .login {
-    width: 100%;
-    padding:1rem 0;
-    margin-top: 1rem;
-    margin-bottom: 10px;
+    align-self: center;
+    background: #f77b39;
     border: none;
     border-radius: 8px;
     box-shadow: 0 20px 50px -12px #00000056;
@@ -148,14 +96,61 @@
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
-    background: var(--btn-login-bg-color);
+    color: #2f2b5e;
     cursor: pointer;
     transition: background 0.3s ease;
 }
-.login a {
-    text-decoration: none;
+
+.login:hover {
+    background: #f56517;
 }
 
-.login:hover{
-    background: var(--btn-login-bg-color-houver);
+/* Responsividade para telas pequenas (tablets) */
+@media (max-width: 1047px) {
+    .main-login {
+        margin-top: 125px;
+        flex-direction: column;
+    }
+
+    .right-login > h1 {
+        margin-top: 75px;
+        font-size: 1.8rem;
+    }
+
+    .Img-login {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .login-container {
+        width: 80vw;
+        padding: 20px;
+    }
+
+    .login-container > h1 {
+        font-size: 1.6rem;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
+
+/* Responsividade para telas muito pequenas (Smartphones) */
+@media (max-width: 733px) {
+    .main-login {
+        margin-top: 100px;
+    }
+
+    .right-login > h1 {
+        font-size: 1.45rem;
+    }
+
+    .login-container {
+        width: 90vw;
+    }
+
+    .login-container > h1 {
+        font-size: 1.35rem;
+    }
 }

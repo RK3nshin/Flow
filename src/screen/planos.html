@@ -1,3 +1,9 @@
+<!-- Projeto FlowMap Kanban
+PARTICIPANTES:
+Alexandre Vieira Gonçalves
+Guilbert Wilkerson Marques Oliveira 
+-->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,45 +26,54 @@
 
 </head>
 <body>
+    <!-- Cabeçalho do Site -->
     <header>
-        <nav class="home_bar" >
+        <nav id="home_bar">
+            <!-- Menus e logo do Site -->
             <ul>
-                <li id="logo" class="item_bar"><a href="/index.html">
-                        <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap ">
-                        <span>FlowMap</span>
-                    </a></li>
-             
-                <li class="item_bar"><a href="/src/screen/planos.html"> Assinaturas </a></li>
-                <li class="item_bar"><a href="/src/screen/sobreNos.html">Sobre nós </a></li>
-                
-                <div id="button-container">
-                    <li class="btn_bar"> <a href="/src/screen/login.html">
-                            <button id="btn-login">Entrar</button>
-                        </a> </li>
-                    <li class="btn_bar"> <a href="/src/screen/signup.html">
-                            <button id="btn-signup">Comece gratuitamente</button>
-                        </a></li>
-                </div>
-                <button id="btn_menu" onclick="openMenu()">
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                </button>
+                <li id="logo">
+                    <a href="/index.html">
+                        <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap">
+                        FlowMap
+                    </a>
+                </li>  
+                <li class="item_bar"><a href="./planos.html">Assinaturas</a></li>
+                <li class="item_bar"><a href="./sobreNos.html">Sobre nós</a></li>
             </ul>
+
+            <!-- Container dos botões de Entrar e Criar Conta -->
+            <div id="button-container">
+                <button id="btn-login"  class="btn_bar" onclick="window.location.href='./login.html';">
+                    Entrar
+                </button>
+                <button id="btn-signup"  class="btn_bar" onclick="window.location.href='./signup.html';">
+                    Criar Conta
+                </button>
+            </div>
+
+            <!-- Botão do menu para dispositivos com telas pequenas -->
+            <button id="btn_menu" onclick="openMenu()">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
         </nav>
-         <div id="menu_mobile" class="menu_mobile">
+
+        <!-- Menu do site para dispositivos com telas pequenas -->
+        <div id="menu_mobile" class="menu_mobile">
             <nav>
-                
-                <a class="item_bar_mob" href="/src/screen/planos.html">Planos</a>
-                <a class="item_bar_mob" href="/src/screen/sobreNos.html">Sobre nós</a>
-                <a class="item_bar_mob" href="/src/screen/login.html">Entrar</a>
-                <a class="item_bar_mob" href="/src/screen/signup.html">Criar Conta</a>
+                <a class="item_bar_mob" href="/index.html">FlowMap</a>
+                <a class="item_bar_mob" href="./sobreNos.html">Sobre nós</a>
+                <a class="item_bar_mob" href="./login.html">Entrar</a>
+                <a class="item_bar_mob" href="./signup.html">Criar Conta</a>
             </nav>
         </div>
     </header>
+
+    <!-- Cards dos planos de assinatura -->
     <main>
-        <section class="plans">
-            <div class="card personal">
+        <section id ="plans">
+            <div class="card">
                 <h2>Plano Básico Pessoal</h2>
                 <p class="price">R$ 30/mês</p>
                 <ul>
@@ -68,7 +83,7 @@
                     <li>Sem IA de suporte</li>
                 </ul>
             </div>
-            <div class="card personal">
+            <div class="card">
                 <h2>Plano Ultimate Pessoal</h2>
                 <p class="price">R$ 100/mês</p>
                 <ul>
@@ -79,7 +94,7 @@
                     <li>IA de suporte</li>
                 </ul>
             </div>
-            <div class="card business">
+            <div class="card">
                 <h2>Plano Básico Empresarial</h2>
                 <p class="price">R$ 1000/mês</p>
                 <ul>
@@ -90,7 +105,7 @@
                     <li>Sem IA de suporte</li>
                 </ul>
             </div>
-            <div class="card business">
+            <div class="card">
                 <h2>Plano Ultimate Empresarial</h2>
                 <p class="price">R$ 2000/mês</p>
                 <ul>
@@ -104,9 +119,16 @@
             </div>
         </section>
     </main>
+
+    <!-- JS para o funcionamento do Menu Mobile -->
+    <script src="../js/menu.js"></script>
+
+    <!-- Rodapé do site -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2024 FlowMap. Todos os direitos reservados.</p>
+            
+            <!-- Logo das redes sociais -->
             <div class="social-icons">
                 <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
                         class="fab fa-facebook-f"></i></a>
@@ -117,8 +139,6 @@
                         class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-
-        <script src="/src/js/menu.js"></script>
     </footer>
 </body>
 </html>

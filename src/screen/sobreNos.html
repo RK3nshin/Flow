@@ -1,3 +1,9 @@
+<!-- Projeto FlowMap Kanban
+PARTICIPANTES:
+Alexandre Vieira Gonçalves
+Guilbert Wilkerson Marques Oliveira 
+-->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,61 +31,75 @@
 </head>
 
 <body>
+    <!-- Cabeçalho do Site -->
     <header>
-        <nav class="home_bar">
+        <nav id="home_bar">
+            <!-- Menus e logo do Site -->
             <ul>
-                <li id="logo" class="item_bar"><a href="/index.html">
-                        <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap ">
-                        <span>FlowMap</span>
-                    </a></li>
-                
-                <li class="item_bar"><a href="/src/screen/planos.html"> Assinaturas </a></li>
-                <li class="item_bar"><a href="#">Sobre nós </a></li>
-
-                <div id="button-container">
-                    <li class="btn_bar"> <a href="/src/screen/login.html">
-                        <button id="btn-login">Entrar</button>
-                    </a> </li>
-                    <li class="btn_bar"> <a href="signup.html">
-                            <button id="btn-signup">Comece gratuitamente</button>
-                        </a></li>
-                </div>
-                <button id="btn_menu" onclick="openMenu()">
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                </button>
+                <li id="logo">
+                    <a href="/index.html">
+                        <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap">
+                        FlowMap
+                    </a>
+                </li>  
+                <li class="item_bar"><a href="./planos.html">Assinaturas</a></li>
+                <li class="item_bar"><a href="./sobreNos.html">Sobre nós</a></li>
             </ul>
+
+            <!-- Container dos botões de Entrar e Criar Conta -->
+            <div id="button-container">
+                <button id="btn-login"  class="btn_bar" onclick="window.location.href='./login.html';">
+                    Entrar
+                </button>
+                <button id="btn-signup"  class="btn_bar" onclick="window.location.href='./signup.html';">
+                    Criar Conta
+                </button>
+            </div>
+
+            <!-- Botão do menu para dispositivos com telas pequenas -->
+            <button id="btn_menu" onclick="openMenu()">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
         </nav>
+
+        <!-- Menu do site para dispositivos com telas pequenas -->
         <div id="menu_mobile" class="menu_mobile">
             <nav>
-                <a class="item_bar_mob" href="./screen/kanban.html"> Ferramentas </a>
-                <a class="item_bar_mob" href="/src/screen/sobreNos.html">Sobre nós</a>
-                <a class="item_bar_mob" href="./screen/login.html">Entrar</a>
-                <a class="item_bar_mob" href="./screen/signup.html">Criar Conta</a>
+                <a class="item_bar_mob" href="/index.html">FlowMap</a>
+                <a class="item_bar_mob" href="./planos.html">Assinaturas</a>
+                <a class="item_bar_mob" href="./signup.html">Entrar</a>
+                <a class="item_bar_mob" href="./signup.html">Criar Conta</a>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- Explicação sobre o projeto -->
         <section class="about">
             <h2>Quem Somos</h2>
             <p>
-                A FlowMap é uma plataforma inovadora dedicada a ajudar indivíduos e empresas a gerenciar suas tarefas e
-                projetos de maneira eficiente. Com uma interface intuitiva e recursos avançados, nosso objetivo é
-                facilitar a organização e aumentar a produtividade.
+                A FlowMap é uma plataforma inovadora dedicada a ajudar indivíduos e empresas no gerenciar de suas tarefas e
+                projetos de forma eficiente. Tendo uma interface intuitiva e com vários recursos avançados, nosso objetivo é
+                facilitar a organização e aumentar a produtividade, permitindo um melhor acompanhamento de atividades, prazos 
+                e prioridades, otimizando o fluxo de trabalho para garantir resultados mais rápidos e eficazes.
             </p>
         </section>
 
+        <!-- Explicação do porque escolhemos fazer este projeto -->
         <section class="mission">
             <h2>Nossa Missão</h2>
             <p>
-                Durante nossa vida acadêmica, a organização sempre foi um ponto de grande relevância. Nesse sentido,
-                tentamos recriar as funcionalidades de algumas ferramentas de Kanban para oferecer uma forma simples e
-                eficaz de organizar tarefas.
+                Durante nossa vida acadêmica, a organização sempre desempenhou um papel fundamental para garantir o sucesso 
+                e a eficiência nas atividades diárias. Nesse sentido, tentamos recriar as funcionalidades de algumas ferramentas 
+                de Kanban, com o objetivo de proporcionar uma maneira simples, e eficaz de organizar tarefas. Através desse sistema 
+                de gerenciamento, é possível acompanhar o progresso de cada atividade, otimizar o fluxo de trabalho e garantir um 
+                maior controle sobre prazos e prioridades.
             </p>
         </section>
 
+        <!-- Participantes -->
         <section class="team">
             <h2>Conheça Nossa Equipe</h2>
             <div class="team-member">
@@ -93,9 +113,16 @@
         </section>
 
     </main>
+
+    <!-- JS para o funcionamento do Menu Mobile -->
+    <script src="../js/menu.js"></script>
+
+    <!-- Rodapé do site -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2024 OrganizeIt. Todos os direitos reservados.</p>
+            
+            <!-- Logo das redes sociais -->
             <div class="social-icons">
                 <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
                         class="fab fa-facebook-f"></i></a>
@@ -106,7 +133,6 @@
                         class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-
     </footer>
 </body>
 

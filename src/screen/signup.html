@@ -1,93 +1,115 @@
+<!-- Projeto FlowMap Kanban
+PARTICIPANTES:
+Alexandre Vieira Gonçalves
+Guilbert Wilkerson Marques Oliveira 
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/imgs/LogoFlow.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/moblie/index.css">
-    <link rel="stylesheet" href="../css/loginSignup.css">
-    <link rel="stylesheet" href="../css/moblie/loginSingup.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="icon" href="/imgs/LogoFlow.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/loginSignup.css">
 
     <title>Entre Para Acessar o Seu FlowMap</title>
 </head>
 
 <body>
+    <!-- Cabeçalho do Site -->
     <header>
-        <nav class="home_bar" >
+        <nav id="home_bar">
+            <!-- Menus e logo do Site -->
             <ul>
-                <li id="logo" class="item_bar"><a href="/index.html">
+                <li id="logo">
+                    <a href="/index.html">
                         <img id="logo_img" src="/imgs/LogoFlow.png" alt="Logo da FlowMap ">
-                        <span>FlowMap</span>
-                    </a></li>
-                
-                <li class="item_bar"><a href="/src/screen/planos.html"> Assinaturas </a></li>
-                <li class="item_bar"><a href="#">Sobre nós </a></li>
-                
-                <div id="button-container">
-                    <li class="btn_bar"> <a href="login.html">
-                            <button id="btn-login">Entrar</button>
-                        </a> </li>
-                   
-                </div>
-                <button id="btn_menu" onclick="openMenu()">
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                </button>
+                        FlowMap
+                    </a>
+                </li> 
+                <li class="item_bar"><a href="./planos.html">Assinaturas</a></li>
+                <li class="item_bar"><a href="./sobreNos.html">Sobre nós </a></li>
             </ul>
+
+            <!-- Container dos botões de Entrar e Criar Conta -->
+            <div id="button-container">
+                <button id="btn-login"  class="btn_bar" onclick="window.location.href='./login.html';">
+                    Entrar
+                </button>
+            </div>
+
+            <!-- Botão do menu para dispositivos com telas pequenas -->
+            <button id="btn_menu" onclick="openMenu()">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
         </nav>
+
+        <!-- Menu do site para dispositivos com telas pequenas -->
         <div id="menu_mobile" class="menu_mobile">
             <nav>
-               
-                <a class="item_bar_mob" href="/src/screen/planos.html">Assinaturas</a>
-                <a class="item_bar_mob" href="/src/screen/sobreNos.html">Sobre nós</a>
+                <a class="item_bar_mob" href="/index.html">FlowMap</a>
+                <a class="item_bar_mob" href="./planos.html">Assinaturas</a>
+                <a class="item_bar_mob" href="#">Sobre nós</a>
                 <a class="item_bar_mob" href="./login.html">Entrar</a>
-                <a class="item_bar_mob" href="./signup.html">Criar Conta</a>
             </nav>
         </div>
     </header>
 
+    <!-- Tela de signup -->
     <main>
         <div class="main-login">
+            <!-- Parte esquerda da tela de signup -->
             <div class="left-login">
-                <div class="login-container-singup">
+                <!-- Container da tela de signup -->
+                <div class="login-container">
                     <h1>Registre-se para continuar</h1>
+
                     <div class="text-container ">
                         <label for="user"> Digite seu E-mail</label>
-                        <input type="email" nome="user" placeholder="Insira seu email">
+                        <input type="email" id="user" name="user" placeholder="Insira seu email">
                     </div>
+
                     <div class="text-container ">
                         <label for="senha"> Senha</label>
-                        <input type="password" nome="senha" placeholder="Insira sua senha">
+                        <input type="password" id="senha" name="senha" placeholder="Insira sua senha">
                     </div>
+
                     <div class="text-container ">
-                        <label for="senha"> Confirme sua Senha</label>
-                        <input type="password" nome="senha" placeholder="Insira sua senha novamente">
-                    </div class='btn'>
-                    <button  class="login"> <a  href="kanban.html">Entrar </a></button>
-                 </div>
+                        <label for="conf_senha"> Confirme sua Senha</label>
+                        <input type="password" id="conf_senha" name="senha" placeholder="Insira sua senha novamente">
+                    </div>
+
+                    <button class="login" onclick="window.location.href='#';">Entrar</button>
+                </div>
             </div>
+
+            <!-- Parte direita da tela de login -->
             <div class="right-login">
                 <h1>Bem-vindo  <br> Embarque em novo jornada </h1>
                 <img src="/imgs/organizing-projects-animate.svg"  class="Img-login" alt="animação do kanban">
             </div>
-
         </div>
     </main>
+
+    <!-- JS para o funcionamento do Menu Mobile -->
+    <script src="../js/menu.js"></script>
+    
+    <!-- Rodapé do site -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2024 OrganizeIt. Todos os direitos reservados.</p>
+
+            <!-- Logo das redes sociais -->
             <div class="social-icons">
                 <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
                         class="fab fa-facebook-f"></i></a>
@@ -98,10 +120,7 @@
                         class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-
     </footer>
-
-    <script type="text/javascript" src="../js/menu.js"></script>
 </body>
 
 </html>
